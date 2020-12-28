@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Curriculum Vitae</title>
+  </head>
+  <body>
+    <header id="sidebar">
+      <img id="logo" src="img/LOGO.svg" alt="logo" />
+      <a href="#" id="quit-nav">
+        <img
+          src="img/chevron-left.svg"
+          alt="flèche gauche"
+          class="invert-color"
+        />
+      </a>
+
+      <nav id="main-nav">
+          <a href="metiers.html">Métiers</a>
+          <a href="cv.html">Curriculum Vitae</a>
+          <a href="poster.html">Poster</a>
+          <a class="main-current" href="index.html">Accueil</a>
+    </nav>
+    </header>
+    <a href="#sidebar" class="btn" id="open-nav"
+      ><div></div>
+      <div></div>
+      <div></div
+    ></a>
+
+    <div id="page">
+      <img
+        src="img/cloud1.svg"
+        alt="cloud1"
+        class="clouds invert-color"
+        id="cloud1"
+      />
+      <img src="img/cloud2.svg" alt="cloud2" class="clouds" id="cloud2" />
+      <img
+        src="img/cloud3.svg"
+        alt="cloud3"
+        class="clouds invert-color"
+        id="cloud3"
+      />
+      <img
+        src="img/cloud4.svg"
+        alt="cloud4"
+        class="clouds invert-color"
+        id="cloud4"
+      />
+      <img
+        src="img/cloud5.svg"
+        alt="cloud5"
+        class="clouds invert-color"
+        id="cloud5"
+      />
+      <img
+        src="img/cloud6.svg"
+        alt="cloud6"
+        class="clouds invert-color"
+        id="cloud6"
+      />
+      <img
+        src="img/cloud7.svg"
+        alt="cloud7"
+        class="clouds invert-color"
+        id="cloud7"
+      />
+      <section id="CV-header">
+        <a href="pdf" class="btn"><img src="img/download.svg" alt="Télécharger" class="invert-color"></a>
+        <div class="btn" onclick="javascript:window.print()">
+            <img src="img/printer.svg" alt="Imprimer" class="invert-color">
+        </div>
+        <h1 class="big-title">CV Professionnel</h1>
+    </section>
+    <section id="CV-container">
+        <div id="CV-photo"><img src="img/photo_CV.jpg" alt="photo de moi"></div>
+        
+        <div id="CV-contact">
+            <p class="icon-phone white-pseudo">06 37 97 30 84</p>
+            <a class="icon-mail white-pseudo" href="mailto:hugo.martin.3@etu.u-bordeaux.fr">hugo.martin.3@etu.u-bordeaux.fr</a>
+            <p class="icon-home white-pseudo">17000 La Rochelle <br> 33000 Bordeaux</p>
+        </div>
+        <div id="CV-intro">
+            Étudiant à l'IUT de bordeaux en DUT Informatique, et passioné par le domaine, je cumule quelques années de pratique
+                    sur différentes technologies et suis toujours à la recherche de nouveaux domaines de travail. Je recherche
+                    un emploi ou un stage dans le secteur du dévelopement informatique, avec une préférence pour le dévelopement web, notamment
+                    sur la librairie React que j'affectionne.
+        </div>
+        <div id="CV-pro">
+          
+        </div>
+        <div id="CV-formation"></div>
+        
+        <div id="CV-competences">
+          <div class="competence" id="java">
+            <h3>Java</h3>
+            <div class="loading-bar" style="--load: 0.45;"></div>
+          </div>
+          <div class="competence" id="html">
+            <h3>HTML</h3>
+            <div class="loading-bar" style="--load: 0.80;"></div>
+          </div>
+          <div class="competence" id="css">
+            <h3>CSS</h3>
+            <div class="loading-bar" style="--load: 0.63;"></div>
+          </div>
+          <div class="competence" id="javascript">
+            <h3>JavaScript</h3>
+            <div class="loading-bar" style="--load: 0.15;"></div>
+          </div>
+          
+        
+        
+        
+        </div>
+        
+        <div id="CV-autres"></div>
+      </section>
+      <div id="CV-post-bac" class="CV-scolaire">
+          <p class="icon-diploma white-pseudo">
+              2022 - Obtention du DUT Informatique
+          </p>
+      </div>
+      <div id="CV-lycee" class="CV-scolaire">
+          <p class="icon-diploma white-pseudo">
+              2020 - Obtention du Baccalauréat S
+          </p>
+      </div>
+      <div id="CV-brevet" class="CV-scolaire">
+          <p class="icon-diploma white-pseudo">2017 - Obtention du Diplôme National du Brevet</p>
+          <p>2017 - Stage en entreprise d'animation et habillage 3D</p>
+      </div>
+    
+    </div>
+    
+  </body>
+</html>
