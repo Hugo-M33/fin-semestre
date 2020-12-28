@@ -512,12 +512,13 @@ body {
 .echelon-formation {
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
+    
 }
 
 .echelon-formation * {
     width: 100%;
     margin: 0.125em;
+    text-align: center;
 }
 
 .echelon-formation#DUT {
