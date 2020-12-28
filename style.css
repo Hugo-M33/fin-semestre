@@ -509,6 +509,21 @@ body {
     background-color: var(--Tlgrey);
 }
 
+.echelon-formation {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.echelon-formation * {
+    width: 100%;
+    margin: 0.125em;
+}
+
+.echelon-formation#DUT {
+    filter: brightness(75%);
+}
+
 #CV-competences {
     grid-area: comp;
     background-color: white;
@@ -526,7 +541,7 @@ body {
 }
 
 .competence h3 {
-    
+    transition: color 0.4s ease-in-out;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -568,17 +583,21 @@ body {
     background-color:  var(--lgrey);
 }
 
-.competence#java:hover .loading-bar {
+.competence#java:hover .loading-bar, .competence#java:hover h3 {
     border-color: #D9752C;
+    color: #D9752C;
 } 
-.competence#javascript:hover .loading-bar {
+.competence#javascript:hover .loading-bar, .competence#javascript:hover h3 {
     border-color:  #EAC049;
+    color:  #EAC049;
 }
-.competence#html:hover .loading-bar {
+.competence#html:hover .loading-bar, .competence#html:hover h3 {
     border-color: #E16D3C;
+    color: #E16D3C;
 } 
-.competence#css:hover .loading-bar {
+.competence#css:hover .loading-bar, .competence#css:hover h3 {
     border-color: #559BD2;
+    color: #559BD2;
 }
 
 
