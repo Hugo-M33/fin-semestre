@@ -96,6 +96,7 @@ a, a:visited {
 
 body {
     background-image: linear-gradient(0deg, var(--black) 0%,var(--grey) 100%);
+    background-image: url(img/bg-image.jpg);
     color: white;
     margin: 0;
 }
@@ -194,6 +195,7 @@ body {
 
 
     background-color: var(--grey);
+    background-image: url(img/nav-bg-image.jpg);
 
 
     transition: left 0.5s ease-out;
@@ -201,6 +203,7 @@ body {
 
 #sidebar:target {
     left: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 } 
 
 #sidebar:target ~ #page {
@@ -453,6 +456,10 @@ body {
     "etc etc etc etc etc etc etc";
 }
 
+#CV-container>*:not(:first-child) {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
 #CV-photo {
     grid-area: pic;
     
@@ -479,7 +486,6 @@ body {
 
 #CV-contact * {
     width: 100%;
-    text-align: center;
 }
 
 #CV-intro {
