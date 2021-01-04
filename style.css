@@ -101,6 +101,7 @@ body {
     color: white;
     margin: 0;
     font-size: 1.25vw;
+    -webkit-print-color-adjust: exact !important;
 }
 
 .clouds {
@@ -296,8 +297,21 @@ body {
     animation: rebond-texte 5s ease-in-out infinite;
 }
 
+svg {
+    width: 150vw;
+    height: 20vh;
+    margin-bottom: -0.5%;
+    z-index: -1;
+    filter: drop-shadow(0 -10px 10px rgba(0,0,0,0.2));
+}
+.vague {
+    fill: #303030;
+}
 
-
+#CV-wrapper {
+    background-color: #303030;
+    padding: 2% 0;
+}
 
 
 
@@ -379,6 +393,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    background-color: #303030;
 }
 
 .projet {
@@ -394,7 +409,7 @@ body {
     flex-flow: column nowrap;
     align-items: center;
     background-color: white;
-    color: var(--black);
+    color: #303030;
 }
 
 .projet-content {
@@ -464,24 +479,28 @@ body {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(10, 1fr);
     width: 80vw;
-    margin: 2% auto;
+    margin: auto;
     padding: 1%;
     border-radius: 10px;
     gap: 5px 5px;
-    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2),
+                -10px -10px 10px rgba(0, 0, 0, 0.2);
     grid-template-areas:
     "bio bio bio bio bio bio pic"
     "edu edu edu edu edu at at"
     "edu edu edu edu edu at at"
-    "exp exp exp exp comp comp comp"
-    "exp exp exp exp comp comp comp"
-    "exp exp exp exp comp comp comp"
-    "exp exp exp exp comp comp comp"
-    "exp exp exp exp comp comp comp"
+    "exp exp exp exp exp comp comp"
+    "exp exp exp exp exp comp comp"
+    "exp exp exp exp exp comp comp"
+    "exp exp exp exp exp comp comp"
+    "exp exp exp exp exp .    ."
     "etc etc etc etc etc etc etc"
     "etc etc etc etc etc etc etc";
     background: rgba(255, 255, 255, 0.9);
-    color: var(--black);
+}
+
+#CV-container * {
+    color: #303030;
 }
 
 #CV-photo {
@@ -531,19 +550,25 @@ body {
 
 #CV-pro {
     grid-area: exp;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 #CV-formation {
     grid-area: edu;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
-.echelon-formation {
+.echelon-formation, .exp-pro {
     display: flex;
     flex-wrap: wrap;
     
 }
 
-.echelon-formation * {
+.echelon-formation *, .exp-pro * {
     width: 100%;
     margin: 0.125em;
     text-align: center;
@@ -675,10 +700,10 @@ body {
 
 .loading-bar {
     position: relative;
-    border: 1.5vh solid var(--lgrey);
+    border: 0.9vw solid var(--lgrey);
     border-radius: 50px;
-    height: 15vh;
-    width: 5vh;
+    height: 9vw;
+    width: 3vw;
     transition: border-color 0.4s ease-in-out;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
@@ -690,9 +715,97 @@ body {
     border-radius: 50px;
     left: 25%;
     bottom: 10%;
-    width: 2.5vh;
-    height: calc( 2vh + calc( var(--load) * 10vh));
+    width: 1.5vw;
+    height: calc( 1.2vw + calc( var(--load) * 6vw));
     transition: background-color 0.4s ease-in-out;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#dl-poster {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 80vw;
+    margin-top: 50vh;
+    cursor: pointer;
+}
+
+#dl-poster:hover img {
+    transform: scale(1.05);
+    filter: brightness(25%);
+    cursor: pointer;
+
+}
+
+#dl-poster::after, #dl-poster::before {
+    content: 'Cliquez pour télécharger (PDF)';
+    position: absolute;
+    top: 25%;
+    left: 0;
+    font-size: 4rem;
+    font-weight: 800;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: scale(0.95);
+    cursor: pointer;
+    
+}
+
+#dl-poster::before {
+    top: unset;
+    bottom: 25%;
+}
+
+#dl-poster:hover::before, #dl-poster:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#poster {
+    width: 80vw;
+    margin: auto;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+    #poster, #dl-poster {
+        width: 100vw;
+    }
+}
+
+#page-pro {
+    background-color: #303030;
+}
+
+#page-pro>article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+#questionnaire {
+    flex-direction: column;
+    align-items: center;
+}
+
+#questionnaire>p {
+    background-color: #3f3f3f;
+    padding: 0.45em;
+    margin: 0 5vw;
+    border-radius: 25px;
+    width: 40vw;
+    text-align: justify;
+    text-justify: distribute;
+}
+.Q-question {
+    align-self: flex-end;
+}
+
+.Q-reponse {
+    align-self: flex-start;
 }
 
