@@ -392,14 +392,22 @@ text-align:center;
 #CV-container {
 display:grid;
 grid-template-columns:repeat(7,1fr);
-grid-template-rows:repeat(10,1fr);
+grid-template-rows:repeat(7,1fr);
 width:80vw;
 margin:auto;
 padding:1%;
 border-radius:10px;
 gap:5px 5px;
 box-shadow:10px 10px 10px rgba(0,0,0,0.2),-10px -10px 10px rgba(0,0,0,0.2);
-grid-template-areas:"bio bio bio bio bio bio pic" "edu edu edu edu edu at at" "edu edu edu edu edu at at" "exp exp exp exp exp comp comp" "exp exp exp exp exp comp comp" "exp exp exp exp exp comp comp" "exp exp exp exp exp comp comp" "exp exp exp exp exp . ." "etc etc etc etc etc etc etc" "etc etc etc etc etc etc etc";
+grid-template-areas:"bio bio bio bio bio bio pic"
+ "edu edu edu edu edu at at"
+  "edu edu edu edu edu at at"
+   "exp exp exp exp exp comp comp"
+    "exp exp exp exp exp comp comp"
+     "etc etc etc etc etc comp comp"
+      "etc etc etc etc etc . ."
+         "etc etc etc etc etc . ."
+        /* "etc etc etc etc etc etc etc"*/;
 background:rgba(255,255,255,0.9);
 }
 
@@ -524,6 +532,9 @@ color:#559BD2;
 
 #CV-autres {
 grid-area:etc;
+display: flex;
+flex-flow: row wrap;
+align-items: center;
 }
 
 [class^="icon"] {
@@ -922,6 +933,33 @@ footer>* {
 margin:1vh;
 }
 
+#a-propos {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+}
+
+.autres {
+    width: 45%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#autres-langues h2{
+    width: 50%;
+}
+
+#autres-competences h2 {
+    width: 100%;
+    text-align: center;
+}
+
+#autres-competences h3 {
+    width: 50%;
+    text-align: center;
+}
+
 @media screen and (max-width: 800px) {
 :root {
 font-size:1.5vh;
@@ -946,14 +984,49 @@ width:75%;
 }
 
 #questionnaire p,#courriel p {
-font-size:1.5rem;
+font-size:1.85rem;
 }
 
 #synthese .big-subtitle,.synth-separateur-sections {
-font-size:2rem;
+font-size:2.3rem;
 }
 
 #synthese p {
-font-size:1rem;
+font-size:1.5rem;
 }
+
+footer {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer p {
+    order: 2;
+}
+
+footer #social-icons {
+    order: 3;
+}
+
+
+}
+
+@media print {
+    header, .btn, .vague, footer {
+        display: none;
+    }
+
+    #CV-wrapper {
+        background-color: unset;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+    }
+
+    #CV-Container {
+        width: 100vw;
+    }
+
 }
